@@ -33,22 +33,22 @@ public class BotoneraController {
 			HttpServletResponse response) {
 
 		ModelAndView mov = new ModelAndView("main");
-		Set<String> soundPathToFileList = context.getResourcePaths(SOUND_DIRECTORY);
-		ArrayList<String> soundFileList = new ArrayList<String>();
-
-
-		Iterator<String> iterator = soundPathToFileList.iterator();
-		while (iterator.hasNext()) {
-			String pathToFile = iterator.next();
-			if(pathToFile.contains("m4a")){
-				String fileName = new StringTokenizer(pathToFile.substring(
-						SOUND_DIRECTORY.length() + 1, pathToFile.length()), ".")
-						.nextToken();
-				soundFileList.add(fileName);
-			}
-		}
-		
-		mov.addObject("sounds", soundFileList);
+//		Set<String> soundPathToFileList = context.getResourcePaths(SOUND_DIRECTORY);
+//		ArrayList<String> soundFileList = new ArrayList<String>();
+//
+//
+//		Iterator<String> iterator = soundPathToFileList.iterator();
+//		while (iterator.hasNext()) {
+//			String pathToFile = iterator.next();
+//			if(pathToFile.contains("m4a")){
+//				String fileName = new StringTokenizer(pathToFile.substring(
+//						SOUND_DIRECTORY.length() + 1, pathToFile.length()), ".")
+//						.nextToken();
+//				soundFileList.add(fileName);
+//			}
+//		}
+//		
+//		mov.addObject("sounds", soundFileList);
 		return mov;
 	}
 
