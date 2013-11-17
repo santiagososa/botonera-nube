@@ -11,7 +11,7 @@
 	                <a href="#" id="${sound}" class="button color-${i % 8} round">
 	                        <@spring.message code="message." + sound/>
 	                </a>
-	                <audio id="${sound}-button">  
+	                <audio id="${sound}-button" preload="auto">  
 							<source src="/static/sounds/${sound}.ogg" type="audio/ogg" />
 							<source src="/static/sounds/${sound}.mp3" type="audio/mpeg" />
 							<source src="/static/sounds/${sound}.wav" type="audio/wav" />  
