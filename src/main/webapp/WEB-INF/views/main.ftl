@@ -4,7 +4,7 @@
 <@m.main>
 
 	<div class="row">
-		<ul class="small-block-grid-2 large-block-grid-4">
+		<ul class="large-block-grid-4">
 	        <#assign i = 0>
 	        <#list sounds as sound>
 	        	<li class="centered-content">
