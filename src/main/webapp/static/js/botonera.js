@@ -1,7 +1,11 @@
 $(document).ready(function() {
 	
-	// create all audio files and add click handler to each of them
-    var audioArray = {}
+	// force loading all sounds, for browsers that do not support preload-auto
+	$('audio').each(function(index, value){
+		value.load();
+	});
+	
+	// add click handler for playing
     $('.button').click(function(e){
     		e.preventDefault();
     		var buttonId = $(this).attr('id');
@@ -13,8 +17,6 @@ $(document).ready(function() {
     		playable.addEventListener('ended', function(){
     			playable.load();
     		});
-
-    		
     	});
 });
 
