@@ -8,6 +8,7 @@
 	<title><@spring.message code="message.appName"/></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" href="/static/css/foundation.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/botonera.css" media="all">
 </head>
 <body>
 	
