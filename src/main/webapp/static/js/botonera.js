@@ -6,7 +6,6 @@ $(document).ready(function() {
     		e.preventDefault();
     		var buttonId = $(this).attr('id');
     		var audio = $('#'+buttonId+'-button');
-    		console.info(audio);
     		audio[0].play();
     	});
 });

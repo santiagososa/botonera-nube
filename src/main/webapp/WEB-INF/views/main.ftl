@@ -4,7 +4,7 @@
 <@m.main>
 
 	<div class="row">
-		<ul class="small-block-grid-2">
+		<ul class="large-block-grid-4 small-block-grid-2">
 	        <#assign i = 0>
 	        <#list sounds as sound>
 	        	<li class="centered-content">
@@ -12,8 +12,10 @@
 	                        <@spring.message code="message." + sound/>
 	                </a>
 	                <audio id="${sound}-button">  
-	                           <source src="/static/sounds/${sound}.m4a" />  
-	                           <@spring.message code="message.oldBrowser"/>
+							<source src="/static/sounds/${sound}.ogg" type="audio/ogg" />
+							<source src="/static/sounds/${sound}.mp3" type="audio/mpeg" />
+							<source src="/static/sounds/${sound}.wav" type="audio/wav" />  
+							<@spring.message code="message.oldBrowser"/>
 	                </audio> 
                 </li>
                 <#assign i = i + 1>
