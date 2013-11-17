@@ -30,12 +30,12 @@
 		<div class="footer">
 			<div class="row">
 		  		<div class="large-4 columns centered-content">
-					<a href="/">
+					<a href="http://www.tiendanube.com" target="_blank">
 						<img src="http://d26lpennugtm8s.cloudfront.net/assets/insti/img/landing/logo.png" />
 					</a>
 				</div>
 				<div class="large-4 columns centered-content">	
-					<a href="/">
+					<a href="http://www.nuvemshop.com.br" target="_blank">
 						<img src="http://d26lpennugtm8s.cloudfront.net/assets/insti/img/landing/logo-bra.png" />
 					</a>
 				</div>	
