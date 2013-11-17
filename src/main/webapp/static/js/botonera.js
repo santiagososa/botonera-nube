@@ -6,22 +6,15 @@ $(document).ready(function() {
     		e.preventDefault();
     		var buttonId = $(this).attr('id');
     		var audio = $('#'+buttonId+'-button');
+    		var playable = audio[0];
+
+    		//play and reload for future playing (some browsers need this!)
+    		playable.play();
+    		playable.addEventListener('ended', function(){
+    			playable.load();
+    		});
+
     		
-    		console.info(audio[0].canPlayType('audio/mpeg'));
-    		console.info(audio[0].canPlayType('audio/ogg'));
-    		console.info(audio[0].canPlayType('audio/wav'));
-    		
-//    		if (audio.canPlayType('audio/mpeg;')) {
-//    			console.log("holaaa")
-//    		    source.type= 'audio/mpeg';
-//    		    source.src= 'audio/song.mp3';
-//    		} else {
-//    		    source.type= 'audio/ogg';
-//    		    source.src= 'audio/song.ogg';
-//    		}
-    		
-    		audio[0].load();
-    		audio[0].play();
     	});
 });
 
