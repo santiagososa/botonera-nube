@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class BotoneraController {
 
-
 	@Autowired
 	ServletContext context;
 
@@ -31,14 +30,14 @@ public class BotoneraController {
 		for (FileNames fileName : FileNames.values()) {
 			soundFileList.add(fileName.toString());
 		}
-		
+
 		mov.addObject("sounds", soundFileList);
 		return mov;
 	}
 
 }
 
-
 enum FileNames {
-	ay_soy_un_amor, es_una_caca, internet, nos_calmamos, nuvem_shop_mateus, sos_joda, te_podes_calmar, what, aqui_o
+	ay_soy_un_amor, es_una_caca, internet, nos_calmamos, nuvem_shop_mateus, sos_joda, 
+	te_podes_calmar, what, aqui_o, dddd, los_adwords, magique, mmmm, te_balean, toy_turbado, una_paja
 }
