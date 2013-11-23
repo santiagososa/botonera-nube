@@ -1,7 +1,7 @@
 package com.misc.botonera.controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -20,36 +20,49 @@ public class BotoneraController {
 
 	@Autowired
 	ServletContext context;
+	
+	private final Map<String, String> buttonList;
+	
+	public BotoneraController(){
+		buttonList = new HashMap<String, String>();
+		buttonList.put("aqui_o", "lombo");
+		buttonList.put("ay_soy_un_amor", "dani");
+		buttonList.put("callate_la_boca", "fonso");
+		buttonList.put("es_una_caca", "dani");
+		buttonList.put("dddd", "fonso");
+		buttonList.put("internet", "lau");
+		buttonList.put("los_adwords", "sulz");
+		buttonList.put("magique", "fonso");
+		buttonList.put("mmmm", "fonso");
+		buttonList.put("nos_calmamos", "lau");
+		buttonList.put("nuvem_shop_mateus", "fonso");
+		buttonList.put("produtos", "fonso");
+		buttonList.put("sos_joda", "lombo");
+		buttonList.put("te_balean", "sulz");
+		buttonList.put("te_podes_calmar", "lau");
+		buttonList.put("toy_turbado", "sosi");
+		buttonList.put("una_paja", "fonso");
+		buttonList.put("what", "dani");
+	}
+	
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView renderBotonera(HttpServletRequest request,
 			HttpServletResponse response) {
 
 		ModelAndView mov = new ModelAndView("main");
-		List<String> soundFileList = new ArrayList<String>();
-
-		for (FileNames fileName : FileNames.values()) {
-			soundFileList.add(fileName.toString());
-		}
-
-		mov.addObject("sounds", soundFileList);
+		mov.addObject("sounds", buttonList);
 		return mov;
+		
 	}
 
 	@RequestMapping(value = "/{soundId}", method = RequestMethod.GET)
 	public ModelAndView singleSound(@PathVariable String soundId) {
 
 		ModelAndView mov = null;
-		Boolean isContained = false;
 		String curatedSoundId = soundId.replace("-", "_");
 		
-		for (FileNames fileName : FileNames.values()) {
-			if (fileName.name().equals(curatedSoundId)) {
-				isContained = true;
-			}
-		}
-		System.out.println(soundId); System.out.println(isContained);
-		if(isContained){
+		if(buttonList.containsKey(curatedSoundId)){
 			mov = new ModelAndView("single-sound");
 			mov.addObject("sound", curatedSoundId);
 		}else{
@@ -62,6 +75,10 @@ public class BotoneraController {
 
 }
 
-enum FileNames {
-	ay_soy_un_amor, es_una_caca, internet, nos_calmamos, nuvem_shop_mateus, sos_joda, te_podes_calmar, what, aqui_o, dddd, los_adwords, magique, mmmm, te_balean, toy_turbado, una_paja, produtos, callate_la_boca
-}
+
+	
+
+
+
+
+
