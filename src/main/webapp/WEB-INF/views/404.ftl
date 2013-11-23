@@ -3,9 +3,9 @@
 
 <@m.main>
 
-	<span class="stockAlarmError">
-		<@spring.message code="message.404"/>
-	</span>
+	<div class="row">
+		<span class="centered-content error"><@spring.message code="message.404"/></span>
+	</div>
 	
 </@m.main> 
 
