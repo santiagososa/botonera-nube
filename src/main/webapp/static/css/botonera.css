@@ -40,6 +40,14 @@ html,body {
 	text-align: center;
 }
 
+.button{
+	margin: 0px !important;
+}
+
+.single-sound-link{
+	font-size:0.8em;
+}
+
 /* color styles 
 ---------------------------------------------- */
 
